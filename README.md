@@ -1,4 +1,4 @@
-# Form Builder
+# October CMS Form Builder Plugin
 
 ---
 #### Authors
