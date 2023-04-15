@@ -1,0 +1,43 @@
+{% set form = __SELF__.result %}
+{% set event = {
+	'category'       : form.event_tracking.category ?: 'Forms',
+	'action'         : 'Impression',
+	'label'          : form.event_tracking.label,
+	'nonInteraction' : 'true'
+} %}
+
+{% if form.is_live %}
+
+	{% partial __SELF__ ~ '::confirmation'  %}
+
+	{{ form_rej(__SELF__ ~ '::onSubmit', {
+		class: 'form',
+		'files': true,
+		'data-request-validation': true,
+		'data-ga-event': true,
+		'data-ga-category': event.category,
+		'data-ga-label': event.label,
+    	'data-request-update': { (__SELF__ ~ '::confirmation'): '.confirmation' },
+		'data-success-message': form.success_message ? form.success_message : 'Thank you! We&apos;ll be in touch shortly',
+		'data-error-message': form.error_message ?: 'Sorry - your enquiry was not sent'
+	}) }}
+		{% if __SELF__.recaptchaEnabled %}
+			{# Hidden Field will hold our reCaptcha token #}
+			<input type="hidden" name="reCaptcha" value="false">
+		{% endif %}
+
+		{% for field in form.fields %}
+			{% partial __SELF__ ~ '::fields/' ~ field._group field=field %}
+		{% endfor %}
+
+		<div class="form-group">
+			<button type="submit" class="btn">{{ form.button_text ?: 'Submit' }}</button>
+		</div>
+
+	{{ form_close() }}
+
+	{% if form.event_tracking.impression == 1 %}
+		{{ trackEvent(event) }}
+	{% endif %}
+
+{% endif %}

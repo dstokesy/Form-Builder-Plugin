@@ -1,0 +1,36 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    data:
+        type: switch
+        searchable: true
+        invisible: true
+
+    is_read:
+        label: Read?
+        type: isread
+
+    dealt_with:
+        label: Dealt with?
+        type: isactive
+
+    form_name:
+        label: Form
+        relation: form
+        select: name
+
+    name_column:
+        label: Name
+        sortable: false
+        searchable: false
+
+    data[email]:
+        label: email
+
+    created_at:
+        label: Submitted
+        type: datetime
+        format: "d/m/y H:i:s"

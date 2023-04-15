@@ -1,0 +1,491 @@
+input:
+    name: Text Input
+    icon: icon-minus
+    fields:
+
+        text_input_section:
+            label: Text Input
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+email:
+    name: Email Input
+    icon: icon-envelope
+    fields:
+
+        email_input_section:
+            label: Email Input
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        response_email:
+            label: Response Email
+            comment: Field to use if 'Send Response Email' is checked on Emails tab
+            type: checkbox
+            span: right
+
+        required:
+            label: Required?
+            type: checkbox
+            span: left
+
+        validation_message:
+            label: Custom Validation Message
+            span: left
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+textarea:
+    name: Text Area
+    icon: icon-align-left
+    fields:
+
+        text_area_section:
+            label: Text Area
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            type: checkbox
+            span: right
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+select:
+    name: Dropdown
+    icon: icon-list
+    fields:
+
+        dropdown_section:
+            label: Dropdown
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+        options:
+            type: repeater
+            prompt: Add new option
+            form:
+                fields:
+                    name:
+                        label: Name
+                        span: auto
+                        comment: What the user sees
+                    value:
+                        label: Value
+                        span: auto
+                        comment: What is saved in admin
+                        preset:
+                            field: name
+                            type: exact
+
+radios:
+    name: Radios
+    icon: icon-dot-circle-o
+    fields:
+
+        radios_section:
+            label: Radios
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+            disabled: true
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+        options:
+            type: repeater
+            prompt: Add new option
+            form:
+                fields:
+                    name:
+                        label: Name
+                        span: auto
+                        comment: What the user sees
+                    value:
+                        label: Value
+                        span: auto
+                        comment: What is saved in admin
+                        preset:
+                            field: name
+                            type: exact
+
+checkbox:
+    name: Checkbox
+    icon: icon-check-square
+    fields:
+
+        checkbox_section:
+            label: Checkbox
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+            disabled: true
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            type: checkbox
+            span: right
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+hidden:
+    name: Hidden Input
+    icon: icon-minus
+    fields:
+
+        text_input_section:
+            label: Hidden Input
+            type: section
+
+        label:
+            label: Label
+            span: auto
+            comment: Used for entries module
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+fileupload:
+    name: File Uploader
+    icon: icon-files-o
+    fields:
+
+        text_input_section:
+            label: File Uploader
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+datepicker:
+    name: Date Picker
+    icon: icon-calendar
+    fields:
+        datepicker_section:
+            label: Date Picker
+            type: section
+
+        label:
+            label: Label
+            span: auto
+
+        placeholder:
+            label: Placeholder
+            span: auto
+
+        width:
+            label: Width
+            span: auto
+            type: dropdown
+            options:
+                full: Full Width
+                half: 1/2 Width
+                third: 1/3 Width
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        name:
+            label: Name
+            comment: Use this name in the email template
+            span: auto
+            required: true
+            cssClass: js-name-safe
+
+        required:
+            label: Required?
+            span: right
+            type: checkbox
+
+        validation_message:
+            label: Custom Validation Message
+            span: right
+            trigger:
+                action: show
+                field: required
+                condition: checked
+
+contentblock:
+    name: Content Block
+    icon: icon-align-left
+    fields:
+
+        text_area_section:
+            label: Content Block
+            type: section
+
+        code:
+            label: Code
+            span: auto
+            comment: Code so the field can be targeted in frontend
+
+        content:
+            label: Content
+            type: richeditor

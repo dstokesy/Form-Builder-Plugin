@@ -1,0 +1,12 @@
+{% set uuid = random() %}
+
+<div class="form-group {{ field.code }}">
+	{% if field.label %}
+		<label for="form-{{ uuid }}-{{ field.name }}">{{ field.label }}</label>
+	{% endif %}
+	<select name="{{ field.name }}" id="form-{{ uuid }}-{{ field.name }}" class="form-control" {{ field.required == 1 ? 'required' : '' }}>
+		{% for option in field.options %}
+			<option value="{{ option.value }}">{{ option.name }}</option>
+		{% endfor %}
+	</select>
+</div>

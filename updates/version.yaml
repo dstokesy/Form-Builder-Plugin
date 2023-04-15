@@ -1,0 +1,13 @@
+1.0.1: 
+    - 'Creates forms and entries table'
+    - create_forms_table.php
+    - create_entries_table.php
+1.0.2:
+    - 'Adds read and dealt with fields to entries table'
+    - adds_read_and_dealt_with_fields_to_entries_table.php
+1.0.3:
+  - 'Adds url field to entries table'
+  - adds_url_field_to_entries_table.php
+1.0.4:
+  - 'Adds admin_email_link_only to forms table'
+  - adds_admin_email_link_only_to_forms_table.php

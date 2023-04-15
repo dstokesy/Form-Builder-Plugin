@@ -1,0 +1,11 @@
+columns:
+
+    id: ID
+    form: Form
+    name_column: Name
+    email: Email
+    url: URL
+    data: Data
+    is_read: Read?
+    dealt_with: Dealt With?
+    created_at: Submission Date

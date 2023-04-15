@@ -1,0 +1,8 @@
+{% set uuid = random() %}
+
+<div class="form-group {{ field.code }}">
+	{% if field.label %}
+		<label for="form-{{ uuid }}-{{ field.name }}">{{ field.label }}</label>
+	{% endif %}
+	<input type="date" name="{{ field.name }}" id="form-{{ uuid }}-{{ field.name }}" class="form-control" placeholder="{{ field.placeholder }}" {{ field.required == 1 ? 'required' : '' }}>
+</div>

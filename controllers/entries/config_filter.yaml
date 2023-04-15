@@ -1,0 +1,26 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    form:
+        label: Filter by Form
+        modelClass: Dstokesy\Forms\Models\Form
+        conditions: form_id in (:filtered)
+        nameFrom: name
+
+    is_read:
+        label: Read
+        type: switch
+        default: 0
+        conditions:
+            - (is_read != 1 or is_read IS NULL)
+            - is_read = 1
+
+    dealt_with:
+        label: Dealt With
+        type: switch
+        default: 0
+        conditions:
+            - (dealt_with != 1 or dealt_with IS NULL)
+            - dealt_with = 1

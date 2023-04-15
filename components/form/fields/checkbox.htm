@@ -1,0 +1,10 @@
+{% set uuid = random() %}
+
+<div class="form-group {{ field.code }}">
+	<div class="form-check">
+		<input class="form-check-input" name="{{ field.name }}" type="checkbox" id="form-{{ uuid }}-{{ field.name }}" value="1">
+		<label class="form-check-label" for="form-{{ uuid }}-{{ field.name }}">
+			{{ field.label }}
+		</label>
+	</div>
+</div>

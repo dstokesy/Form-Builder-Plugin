@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Name
+        searchable: true
+
+    submissions:
+        label: Submissions
+
+    is_live:
+        label: Live
+        type: isactive

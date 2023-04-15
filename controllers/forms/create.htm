@@ -1,0 +1,43 @@
+<?php Block::put('breadcrumb') ?>
+    <ul class="rej-custom-breadcrumbs">
+        <li><a href="<?= Backend::url('dstokesy/forms/forms') ?>">Forms</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="fancy-layout rej-layout-toolbar">
+            <div class="form-buttons loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Creating Form..."
+                    class="btn btn-primary oc-icon-check save">
+                    Create
+                </button>
+
+                <button
+                    type="button"
+                    data-request="onCancel"
+                    class="btn btn-primary oc-icon-times">
+                    Cancel
+                </button>
+            </div>            
+        </div>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('dstokesy/forms/forms') ?>" class="btn btn-default">Return to forms list</a></p>
+
+<?php endif ?>

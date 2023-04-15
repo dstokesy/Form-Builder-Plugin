@@ -1,0 +1,162 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+tabs:
+    stretch: 1
+
+    fields:
+        name:
+            label: Name
+            span: left
+            tab: Details
+
+        button_text:
+            label: Button Text
+            span: left
+            tab: Details
+
+        is_live:
+            label: Live?
+            type: switch
+            span: left
+            tab: Details
+
+        fields:
+            label: Fields
+            prompt: Add a field
+            span: full
+            type: repeater
+            groups: $/dstokesy/forms/config/form_fields.yaml
+            tab: Fields
+
+        error_message:
+            label: Default Error Message
+            span: left
+            tab: Responses
+
+        success_message:
+            label: Success Message
+            span: left
+            tab: Responses
+
+        success_page:
+            label: Success Page
+            span: left
+            type: dropdown
+            tab: Responses
+
+        user_success_email_checkbox:
+            label: Send User Success Email
+            type: checkbox
+            span: left
+            tab: User Email
+
+        user_email_subject:
+            label: Email Subject
+            type: text
+            span: left
+            trigger:
+                action: show
+                field: user_success_email_checkbox
+                condition: checked
+            tab: User Email
+            default: Thank you for submitting the form
+
+        user_email_bcc:
+            label: BCC Email Addresses
+            comment: Can be multiple, separate each email with ","
+            default: october.enquiries@gmail.com
+            span: left
+            tab: User Email
+            trigger:
+                action: show
+                field: user_success_email_checkbox
+                condition: checked
+
+        user_email_content:
+            label: Email Content
+            type: richeditor
+            span: full
+            comment: To use data from the form put the field name in double curly brackets e.g. {{ name }}
+            tab: User Email
+            trigger:
+                action: show
+                field: user_success_email_checkbox
+                condition: checked
+
+        admin_success_email_checkbox:
+            label: Send Admin Success Email
+            type: checkbox
+            span: left
+            tab: Admin Email
+
+        admin_email_link_only:
+            label: Don't show form data in admin email
+            span: left
+            type: checkbox
+            tab: Admin Email
+            trigger:
+                action: show
+                field: admin_success_email_checkbox
+                condition: checked
+
+        admin_email_recipient:
+            label: Email Recipient
+            comment: Can be multiple, separate each email with ","
+            span: left
+            tab: Admin Email
+            trigger:
+                action: show
+                field: admin_success_email_checkbox
+                condition: checked
+
+        admin_email_cc:
+            label: CC Email Addresses
+            comment: Can be multiple, separate each email with ","
+            span: left
+            tab: Admin Email
+            trigger:
+                action: show
+                field: admin_success_email_checkbox
+                condition: checked
+
+        admin_email_bcc:
+            label: BCC Email Addresses
+            comment: Can be multiple, separate each email with ","
+            default: october.enquiries@gmail.com
+            span: left
+            tab: Admin Email
+            trigger:
+                action: show
+                field: admin_success_email_checkbox
+                condition: checked
+
+        admin_email_subject:
+            label: Email Subject
+            span: left
+            tab: Admin Email
+            trigger:
+                action: show
+                field: admin_success_email_checkbox
+                condition: checked
+
+        event_tracking[category]:
+            label: Category
+            span: left
+            tab: Event Tracking
+
+        event_tracking[label]:
+            label: Label
+            span: left
+            tab: Event Tracking
+
+        event_tracking[impression]:
+            label: Track Impression?
+            span: left
+            type: checkbox
+            tab: Event Tracking
+
+

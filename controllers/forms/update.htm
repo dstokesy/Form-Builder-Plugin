@@ -1,0 +1,65 @@
+<?php Block::put('breadcrumb') ?>
+    <ul class="rej-custom-breadcrumbs">
+        <li><a href="<?= Backend::url('dstokesy/forms/forms') ?>">Forms</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="fancy-layout rej-layout-toolbar">
+            <div class="form-buttons loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Saving Form..."
+                    class="btn btn-primary  oc-icon-check save">
+                    Save
+                </button>
+                <?=$this->renderViewButton()?>
+
+                <?=$this->renderAnalyseContentButton()?>
+
+                <button
+                    type="button"
+                    data-request="onCancel"
+                    class="btn btn-primary oc-icon-times oc-icon-times">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-default oc-icon-trash-o"
+                    data-request="onDelete"
+                    data-load-indicator="Deleting Form..."
+                    data-request-confirm="Delete this form?">
+                    Delete
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-default oc-icon-clone"
+                    data-request="onDuplicate"
+                    data-load-indicator="Duplicating Form..."
+                    data-request-confirm="Duplicate this form?">
+                    Duplicate
+                </button>
+            </div>
+        </div>
+        
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('dstokesy/forms/forms') ?>" class="btn btn-default">Return to forms list</a></p>
+
+<?php endif ?>

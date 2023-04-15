@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Form
+
+# Model Form Field configuration
+form: $/dstokesy/forms/models/form/fields.yaml
+
+# Model Class name
+modelClass: Dstokesy\Forms\Models\Form
+
+# Default redirect location
+defaultRedirect: dstokesy/forms/forms
+
+# Create page
+create:
+    title: Create Form
+    redirect: dstokesy/forms/forms/update/:id
+    redirectClose: dstokesy/forms/forms
+
+# Update page
+update:
+    title: Edit Form
+    redirect: dstokesy/forms/forms
+    redirectClose: dstokesy/forms/forms
+
+# Preview page
+preview:
+    title: Preview Form

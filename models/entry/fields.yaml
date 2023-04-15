@@ -1,0 +1,38 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    submitted_at:
+        type: partial
+        path: $/dstokesy/forms/controllers/entries/_submitted_at_field.htm
+        cssClass: span-inline
+
+    dealt_with:
+        label: Dealt with?
+        type: checkbox
+        cssClass: span-inline
+    
+    mark_as_unread:
+        type: partial
+        path: $/dstokesy/forms/controllers/entries/_mark_as_unread_field.htm
+        cssClass: span-inline
+        
+    form:
+        label: Form
+        type: relation
+        select: name
+        span: auto
+        disabled: true
+
+    url:
+        label: Page Submitted From
+        type: partial
+        path: $/dstokesy/forms/controllers/entries/_url_field.htm
+        span: auto
+        disabled: true
+
+    submission:
+        type: partial
+        path: $/dstokesy/forms/controllers/entries/_submission_field.htm
+        disabled: true

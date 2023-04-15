@@ -1,0 +1,53 @@
+<?php Block::put('breadcrumb') ?>
+    <ul>
+        <li><a href="<?= Backend::url('dstokesy/forms/entries') ?>">Entries</a></li>
+        <li><?= e($this->pageTitle) ?></li>
+    </ul>
+<?php Block::endPut() ?>
+
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="Saving Entry..."
+                    class="btn btn-primary">
+                    Save
+                </button>
+      
+                <button
+                    type="button"
+                    data-request="onCancel"
+                    class="btn btn-primary">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-default"
+                    data-request="onDelete"
+                    data-load-indicator="Deleting Entry..."
+                    data-request-confirm="Delete this entry?">
+                    Delete
+                </button>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+
+    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
+    <p><a href="<?= Backend::url('dstokesy/forms/entries') ?>" class="btn btn-default">Return to entries list</a></p>
+
+<?php endif ?>
